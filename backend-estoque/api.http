@@ -1,0 +1,8 @@
+### http://localhost:3333/products
+Content-Type: application/json
+
+{
+  "name" : "mesa",
+  "description": "4 pernas",
+  
+}
