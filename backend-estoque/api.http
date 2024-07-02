@@ -1,8 +1,13 @@
-### http://localhost:3333/products
+### 
+POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-  "name" : "mesa",
-  "description": "4 pernas",
-  
+  "name" : "kaiak",
+  "description": "perfume masculino",
+  "image": "ajsdopajsopd",
+  "type": "perfume",
+  "gender": "M",
+  "size": 100,
+  "expirationDate": "01/2023"
 }
