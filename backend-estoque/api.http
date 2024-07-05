@@ -6,8 +6,5 @@ Content-Type: application/json
   "name" : "kaiak",
   "description": "perfume masculino",
   "image": "ajsdopajsopd",
-  "type": "perfume",
-  "gender": "M",
-  "size": 100,
   "expirationDate": "01/2023"
 }
