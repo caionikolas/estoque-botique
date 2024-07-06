@@ -8,12 +8,12 @@ export async function getProducts(app: FastifyInstance) {
     .withTypeProvider<ZodTypeProvider>()
     .get('/products', {
       schema: {
-        response: {
-          200: z.object({  })
-        }
+        response: {}
       }
     }, async (request, reply) => {
       const products = await prisma.product.findMany()
+
+      console.log(products)
 
       return reply.send({ products })
     })
