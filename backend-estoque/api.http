@@ -3,7 +3,7 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-  "name" : "Malbek",
+  "name" : 123,
   "description": "perfume masculino",
   "image": "ajsdopajsopd",
   "expirationDate": "2027/02",

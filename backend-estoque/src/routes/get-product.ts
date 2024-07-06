@@ -2,6 +2,7 @@ import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
+import { BadRequest } from "./_errors/bad-request";
 
 export async function getProduct(app: FastifyInstance){
   app
@@ -41,7 +42,7 @@ export async function getProduct(app: FastifyInstance){
       })
 
       if (product == null) {
-        throw new Error('Product not found.')
+        throw new BadRequest('Product not found.')
       }
 
       return reply.send({ product })

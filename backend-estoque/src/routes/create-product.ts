@@ -10,7 +10,7 @@ export async function createProduct(app: FastifyInstance) {
       schema: {
         summary: 'Create um product',
         body: z.object({
-          name: z.string().min(4),
+          name: z.string({ invalid_type_error: 'O nome precisa ser um texto' }).min(4),
           description: z.string().nullish(),
           image: z.string().nullish(),
           expirationDate: z.string().nullish(),
