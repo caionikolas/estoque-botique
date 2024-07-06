@@ -8,6 +8,7 @@ export async function getProduct(app: FastifyInstance){
     .withTypeProvider<ZodTypeProvider>()
     .get('/products/:productId', {
       schema: {
+        summary: 'get an product',
         params: z.object({
           productId: z.string().uuid(),
         }),

@@ -8,6 +8,7 @@ export async function createProduct(app: FastifyInstance) {
     .withTypeProvider<ZodTypeProvider>()
     .post('/products', {
       schema: {
+        summary: 'Create um product',
         body: z.object({
           name: z.string().min(4),
           description: z.string().nullish(),
