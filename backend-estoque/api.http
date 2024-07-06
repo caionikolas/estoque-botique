@@ -6,5 +6,12 @@ Content-Type: application/json
   "name" : "kaiak",
   "description": "perfume masculino",
   "image": "ajsdopajsopd",
-  "expirationDate": "01/2023"
+  "expirationDate": "01/2023",
+  "quantidade": 10
 }
+
+### 
+GET http://localhost:3333/products
+
+###
+GET http://localhost:3333/products/05ab3e64-2239-4755-9d5e-03cac444f154

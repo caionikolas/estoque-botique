@@ -16,6 +16,7 @@ model Product {
   description    String?
   image          String?
   expirationDate String? @map("expiration-date")
+  quantidade     Int
 
   @@map("products")
 }
