@@ -3,7 +3,7 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-  "name" : 123,
+  "name" : "perfume tal",
   "description": "perfume masculino",
   "image": "ajsdopajsopd",
   "expirationDate": "2027/02",
@@ -14,4 +14,19 @@ Content-Type: application/json
 GET http://localhost:3333/products
 
 ###
+PUT http://localhost:3333/products/5edb2631-3a89-4bc4-92bf-1ac797443902
+Content-Type: application/json
+
+{
+  "name" : "perfume ciclano",
+  "description": "perfume masculino",
+  "image": "ajsdopajsopd",
+  "expirationDate": "2027/02",
+  "quantidade": 5
+}
+
+###
 GET http://localhost:3333/products/5edb2631-3a89-4bc4-92bf-1ac797443902
+
+###
+DELETE http://localhost:3333/products/7f89f320-b7a6-4a9f-b38d-c2cc9d7a4aba

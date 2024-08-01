@@ -8,6 +8,8 @@ import { createProduct } from "./routes/create-product";
 import { getProduct } from "./routes/get-product";
 import { getProducts } from "./routes/get-products";
 import { errorHandler } from "./error-handler";
+import { delProduct } from "./routes/del-product"
+import { putProduct } from "./routes/put-product"
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -36,8 +38,10 @@ app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
 app.register(createProduct);
-app.register(getProduct)
-app.register(getProducts)
+app.register(getProduct);
+app.register(getProducts);
+app.register(putProduct);
+app.register(delProduct);
 
 app.setErrorHandler(errorHandler)
 

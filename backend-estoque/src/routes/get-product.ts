@@ -15,13 +15,11 @@ export async function getProduct(app: FastifyInstance){
         }),
         response: {
           200: z.object({
-            product: z.object({
-              name: z.string(),
-              description: z.string().nullish(),
-              image: z.string().nullish().nullish(),
-              expirationDate: z.string().nullish(),
-              quantidade: z.number().int().positive(), 
-            })
+            name: z.string(),
+            description: z.string().nullish(),
+            image: z.string().nullish().nullish(),
+            expirationDate: z.string().nullish(),
+            quantidade: z.number().int().positive(), 
           }),
         },
       }
@@ -45,6 +43,12 @@ export async function getProduct(app: FastifyInstance){
         throw new BadRequest('Product not found.')
       }
 
-      return reply.send({ product })
+      return reply.send({ 
+        name: product.name,
+        description: product.description,
+        image: product.image,
+        expirationDate: product.expirationDate,
+        quantidade: product.quantidade
+       })
     })
 }
