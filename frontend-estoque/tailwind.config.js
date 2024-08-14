@@ -4,7 +4,7 @@ export default {
   theme: {
     fontFamily: {
       Grey: ['Grey Qo'],
-      poppins: ['Poppins']
+      Pop: ['Poppins', 'sans serif']
     }
   },
   plugins: []
