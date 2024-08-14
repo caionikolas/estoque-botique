@@ -17,6 +17,7 @@ export async function putProduct(app: FastifyInstance) {
           description: z.string().nullish(),
           image: z.string().nullish().nullish(),
           expirationDate: z.string().nullish(),
+          tag: z.number().int().positive(), 
           quantidade: z.number().int().positive(), 
         }),
         response: {
@@ -25,13 +26,14 @@ export async function putProduct(app: FastifyInstance) {
             description: z.string().nullish(),
             image: z.string().nullish().nullish(),
             expirationDate: z.string().nullish(),
+            tag: z.number().int().positive(),
             quantidade: z.number().int().positive(), 
           }),
         }
       }
     }, async (request, reply) => {
       const { productId } = request.params
-      const { name,description,image, expirationDate, quantidade } = request.body
+      const { name,description,image, expirationDate, tag, quantidade } = request.body
 
       const product = await prisma.product.findUnique({
         where: {
@@ -52,6 +54,7 @@ export async function putProduct(app: FastifyInstance) {
           description,
           image, 
           expirationDate, 
+          tag,
           quantidade
         }
       })
@@ -60,6 +63,7 @@ export async function putProduct(app: FastifyInstance) {
         description,
         image, 
         expirationDate, 
+        tag,
         quantidade
       })
     })

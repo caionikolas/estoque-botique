@@ -4,5 +4,7 @@ CREATE TABLE "products" (
     "name" TEXT NOT NULL,
     "description" TEXT,
     "image" TEXT,
-    "expiration-date" TEXT
+    "expiration-date" TEXT,
+    "tag" INTEGER NOT NULL,
+    "quantidade" INTEGER NOT NULL
 );

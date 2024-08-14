@@ -19,6 +19,7 @@ export async function getProduct(app: FastifyInstance){
             description: z.string().nullish(),
             image: z.string().nullish().nullish(),
             expirationDate: z.string().nullish(),
+            tag: z.number().int().positive(), 
             quantidade: z.number().int().positive(), 
           }),
         },
@@ -32,6 +33,7 @@ export async function getProduct(app: FastifyInstance){
           description: true,
           image: true,
           expirationDate: true,
+          tag: true,
           quantidade: true
         },
         where: {
@@ -48,6 +50,7 @@ export async function getProduct(app: FastifyInstance){
         description: product.description,
         image: product.image,
         expirationDate: product.expirationDate,
+        tag: product.tag,
         quantidade: product.quantidade
        })
     })

@@ -3,11 +3,12 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-  "name" : "perfume tal",
-  "description": "perfume masculino",
-  "image": "ajsdopajsopd",
-  "expirationDate": "2027/02",
-  "quantidade": 5
+  "name" : "Natura tododia",
+  "description": "Sabonete em barra puro vegetal Folhas de limão e graviola",
+  "image": "https://img.ws.mms.shopee.com.br/0c8bf7add0247f1e2be29e8ad72ca8fc",
+  "expirationDate": "2025/09",
+  "tag": 1,
+  "quantidade": 1
 }
 
 ### 
@@ -20,13 +21,13 @@ Content-Type: application/json
 {
   "name" : "perfume ciclano",
   "description": "perfume masculino",
-  "image": "ajsdopajsopd",
-  "expirationDate": "2027/02",
-  "quantidade": 5
+  "image": "https://m.media-amazon.com/images/I/6157hIeNEIL.__AC_SX300_SY300_QL70_ML2_.jpg",
+  "expirationDate": "2025/10",
+  "quantidade": 1
 }
 
 ###
-GET http://localhost:3333/products/5edb2631-3a89-4bc4-92bf-1ac797443902
+GET http://localhost:3333/products/f70d56e0-901f-44ff-b574-3662d1d3ba64
 
 ###
 DELETE http://localhost:3333/products/7f89f320-b7a6-4a9f-b38d-c2cc9d7a4aba

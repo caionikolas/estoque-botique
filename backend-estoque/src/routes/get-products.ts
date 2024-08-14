@@ -22,9 +22,11 @@ export async function getProducts(app: FastifyInstance) {
                 description: z.string().nullish(),
                 image: z.string().nullish().nullish(),
                 expirationDate: z.string().nullish(),
+                tag: z.number().int().positive(),
                 quantidade: z.number().int().positive(),
               })
-            )
+            ),
+            total: z.number()
           })
         },
       }
@@ -41,6 +43,7 @@ export async function getProducts(app: FastifyInstance) {
           description: true,
           image: true,
           expirationDate: true,
+          tag: true,
           quantidade: true,
         },
         take: 10,
@@ -52,6 +55,8 @@ export async function getProducts(app: FastifyInstance) {
         } : {},
       })
 
+      const total = await prisma.product.count()
+
       return reply.send({ 
         products: products.map(product => {
           return {
@@ -60,9 +65,11 @@ export async function getProducts(app: FastifyInstance) {
             description: product.description,
             image: product.image,
             expirationDate: product.expirationDate,
+            tag: product.tag,
             quantidade: product.quantidade,
           }
-        })
+        }),
+        total,
        })
     })
 }

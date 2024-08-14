@@ -14,6 +14,7 @@ export async function createProduct(app: FastifyInstance) {
           description: z.string().nullish(),
           image: z.string().nullish(),
           expirationDate: z.string().nullish(),
+          tag: z.number().positive().int(),
           quantidade: z.number().positive().int(),
       }),
       response: {
@@ -28,6 +29,7 @@ export async function createProduct(app: FastifyInstance) {
           description,
           image,
           expirationDate,
+          tag,
           quantidade,
         } = request.body
 
@@ -37,6 +39,7 @@ export async function createProduct(app: FastifyInstance) {
             description,
             image,
             expirationDate,
+            tag,
             quantidade
           }
         })
