@@ -29,7 +29,7 @@ export default function ProductList(){
       {
         products.map((product) => {
           return (
-            <div className="min-w-96 h-[26rem] bg-white flex flex-col items-center p-2 rounded-lg">
+            <div className="min-w-96 h-[26rem] bg-white flex flex-col items-center p-2 rounded-lg border border-black/30">
               <div className="w-72 h-64 flex justify-center bg-white rounded-lg mb-3">
                 <img src={product.image ?? ''} alt="" className="max-h-64" />
               </div>
